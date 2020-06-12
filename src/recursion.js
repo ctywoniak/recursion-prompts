@@ -76,11 +76,18 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
-};
+    if(string.length === 0) return '';
+    var result = string.slice(-1);
+    return result += reverse(string.slice(0, -1))
+  };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
-};
+    string = string.toLowerCase();
+    if(string.length === 0) return true;
+    if(string[0] !== string[string.length - 1]) return false;
+    return palindrome(string.slice(1, -1));
+  };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
